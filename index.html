@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Магазин. Барбершоп «Бородинский»</title>
+    <link href="css/style.css" rel="stylesheet" />
   </head>
   <body>
     <!-- Демо с пояснениями https://up.htmlacademy.ru/htmlcss/27/demos/3091 -->
@@ -11,7 +12,7 @@
     <header>
       <nav>
         <a>
-          <img src="img/layout/icon-logo-index.svg" width="368" height="153" alt="Логотип барбершопа «Бородинский»">
+          <img src="img/layout/icon-logo-index.svg" alt="Логотип барбершопа «Бородинский»" width="368" height="153" />
         </a>
         <ul>
           <li><a href="info.html">Информация</a></li>
@@ -21,9 +22,7 @@
           <li><a href="contacts.html">Контакты</a></li>
         </ul>
         <ul>
-          <li>
-             <button type="button">Войти</button>
-           </li>
+          <li><a href="login.html">Вход</a></li>
         </ul>
       </nav>
     </header>
@@ -31,10 +30,10 @@
 
     <!-- Контент -->
     <main>
-      <h1>Барбершоп «Бородинский»</h1>
+      <h1 class="visually-hidden">Барбершоп «Бородинский»</h1>
       
       <section>
-        <h2>Преимущества</h2>
+        <h2 class="visually-hidden">Преимущества</h2>
         <ul>
           <li>
             <h3>Быстро</h3>
@@ -94,7 +93,25 @@
       <section>
         <h2>Записаться</h2>
         <p>Укажите желаемую дату и время и мы свяжемся с вами для подтверждения брони</p>
-        <!-- Здесь будет форма -->
+        <form action="https://echo.htmlacademy.ru" method="post">
+          <p>
+            <label for="appointment-date">Дата</label>
+            <input id="appointment-date" type="date" name="date" value="2017-10-08">
+          </p>
+          <p>
+            <label for="appointment-time">Время</label>
+            <input id="appointment-time" type="time" name="time" value="10:00">
+          </p>
+          <p>
+            <label for="appointment-name">Ваше имя</label>
+            <input id="appointment-name" type="text" name="name" value="" placeholder="Борода">
+          </p>
+          <p>
+            <label for="appointment-phone">Телефон</label>
+            <input id="appointment-phone" type="tel" name="phone" value="" placeholder="+7 123 456-78-90">
+          </p>
+          <button type="submit">Отправить</button>
+        </form> 
       </section>
     </main>
     <!-- /Контент -->
@@ -122,17 +139,47 @@
     </footer>  
     <!-- /Футер -->
 
-    <!-- Попап -->
-    <section>
+    <!-- Попап войти-->
+    <section hidden>
       <h2>Личный кабинет</h2>
       <p>Введите свой логин и пароль.</p>
-      <!-- Здесь будет форма -->
-      <button type="button">Закрыть</button>
+      <form action="https://echo.htmlacademy.ru" method="post">
+        <p>
+          <label for="user-login">Логин</label>
+          <input id="user-login" type="email" name="login" placeholder="email@example.com">
+        </p>
+        <p>
+          <label for="user-password">Пароль</label>
+          <input id="user-password" type="password" name="password" placeholder="••••••••">
+        </p>
+        <p>
+          <input type="checkbox" name="remember" id="login-password-info">
+          <label for="login-password-info">
+            Запомните меня
+          </label>
+          <a href="#">Я забыл пароль!</a>
+        </p>
+        <button type="submit">
+          Войти
+        </button>
+      </form>
+      <button type="button">
+        Закрыть
+      </button>
     </section>
-    
-    <section>
-      <h2>Как до нас добраться</h2>
-      <button type="button">Закрыть</button>
+    <!-- /Попап -->
+
+    <!-- Попап карта -->
+    <section hidden>
+      <h2>
+        Как до нас добраться
+      </h2>
+      <p>
+        <img src="img/map.jpg" width="780" height="560" alt="Офис компании по адресу ул. Большая Конюшенная 19/8, Санкт-Петербург">
+      </p>
+      <button type="button">
+        Закрыть
+      </button>
     </section>
     <!-- /Попап -->
 
